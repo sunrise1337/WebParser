@@ -1,0 +1,69 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Parser" ResizeMode="CanMinimize" Height="450" Width="825">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="330"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel HorizontalAlignment="Center" Grid.Row="0" Grid.ColumnSpan="4" Orientation="Horizontal" Width="430">
+            <Label Width="100" Content="Enter URL here:"/>
+            <TextBox Name="urlTextbox" Height="19" Width="250px" Text="https://netpeaksoftware.com"/>
+            <Button Width="60" Height="19" Margin="10 0 0 0" Click="Button_Click">Parse</Button>
+        </StackPanel>
+
+       
+        <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center">General:</Label>
+        <Label Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center">Headers:</Label>
+        <Label Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center">Images:</Label>
+        <Label Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center">Links:</Label>
+        
+
+        <StackPanel Grid.Row="2">
+            <Separator Margin="0,0,0,0"></Separator>
+            
+            <Label>Title:</Label>
+            <TextBox Name="titleTb" IsReadOnly="True"></TextBox>
+
+            <Label>Description:</Label>
+            <TextBox Name="descTb" IsReadOnly="True"></TextBox>
+
+            <Label>Server Response Code:</Label>
+            <TextBox Name="codeTb" IsReadOnly="True"></TextBox>
+
+            <Label>Response Time:</Label>
+            <TextBox Name="timeTb" IsReadOnly="True"></TextBox>
+            
+        </StackPanel>
+
+        <ListBox Name="headerLb" Grid.Row="2" Grid.Column="1">
+           
+        </ListBox>
+
+        <ListBox Name="imgLb" Grid.Row="2" Grid.Column="2">
+           
+        </ListBox>
+
+        <ListBox Name="linkLb" Grid.Row="2" Grid.Column="3">
+            
+        </ListBox>
+
+                <Label Grid.Row="3" HorizontalAlignment="Center" Margin="0,-4,0,0" Grid.ColumnSpan="2" Name="statusLabel" HorizontalContentAlignment="Center" Grid.Column="1"></Label>
+    </Grid>
+</Window>
